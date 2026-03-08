@@ -1,69 +1,148 @@
-Create a complete responsive website for MHT-CET Previous Year Questions practice.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHT-CET Previous Year Questions</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Using Google Fonts for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-Generate three separate files:
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">MHT-CET<span>Prep</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#subjects">Subjects</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-1. index.html
-2. style.css
-3. script.js
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="container hero-content">
+            <h1>MHT-CET Previous Year Questions</h1>
+            <p>Practice real exam questions for Physics, Chemistry, Mathematics and Biology to boost your confidence and score.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" id="startPracticeBtn">Start Practice</button>
+                <button class="btn btn-outline" onclick="document.getElementById('subjects').scrollIntoView({behavior: 'smooth'})">View Subjects</button>
+            </div>
+        </div>
+    </header>
 
-Website requirements:
+    <!-- Subjects Section -->
+    <section id="subjects" class="section">
+        <div class="container">
+            <h2 class="section-title">Select Your Subject</h2>
+            <div class="grid-container">
+                <!-- Physics Card -->
+                <div class="card">
+                    <div class="card-icon">⚛️</div>
+                    <h3>Physics</h3>
+                    <p>Master concepts with 1000+ PYQs covering Mechanics, Optics, and Electrodynamics.</p>
+                    <button class="btn btn-sm">Practice Now</button>
+                </div>
+                <!-- Chemistry Card -->
+                <div class="card">
+                    <div class="card-icon">🧪</div>
+                    <h3>Chemistry</h3>
+                    <p>Strengthen your organic, inorganic, and physical chemistry fundamentals.</p>
+                    <button class="btn btn-sm">Practice Now</button>
+                </div>
+                <!-- Mathematics Card -->
+                <div class="card">
+                    <div class="card-icon">📐</div>
+                    <h3>Mathematics</h3>
+                    <p>Solve complex problems in Algebra, Calculus, and Vectors with step-by-step solutions.</p>
+                    <button class="btn btn-sm">Practice Now</button>
+                </div>
+                <!-- Biology Card -->
+                <div class="card">
+                    <div class="card-icon">🧬</div>
+                    <h3>Biology</h3>
+                    <p>Comprehensive question bank for Botany and Zoology for Medical aspirants.</p>
+                    <button class="btn btn-sm">Practice Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-1. Create a modern EdTech landing page for students preparing for the MHT-CET exam.
+    <!-- Features Section -->
+    <section id="features" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Why Practice With Us?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">📜</div>
+                    <h3>Previous Year Questions</h3>
+                    <p>Access the last 10 years of MHT-CET papers to understand the exam pattern.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📝</div>
+                    <h3>Practice Quiz</h3>
+                    <p>Timed mock tests that simulate the actual computer-based exam environment.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Instant Score</h3>
+                    <p>Get immediate feedback and detailed analysis of your performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-2. Hero Section:
+    <!-- Footer -->
+    <footer id="about">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>MHT-CET Prep</h3>
+                <p>Empowering students to achieve their dream scores.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#subjects">Subjects</a></li>
+                    <li><a href="#features">Features</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>support@mhtcetprep.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 MHT-CET Prep. All rights reserved.</p>
+        </div>
+    </footer>
 
-- Title: "MHT-CET Previous Year Questions"
-- Subtitle: "Practice real exam questions for Physics, Chemistry, Mathematics and Biology."
-- Two buttons: "Start Practice" and "View Subjects"
+    <!-- Simple Quiz Popup Demo -->
+    <div id="quizModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Quick Demo Quiz</h2>
+            <div class="quiz-body">
+                <p><strong>Question:</strong> What is the unit of Force?</p>
+                <div class="options">
+                    <button class="option-btn" onclick="checkAnswer(false)">Joule</button>
+                    <button class="option-btn" onclick="checkAnswer(true)">Newton</button>
+                    <button class="option-btn" onclick="checkAnswer(false)">Watt</button>
+                </div>
+                <p id="quizResult" class="result-text"></p>
+            </div>
+        </div>
+    </div>
 
-3. Subjects Section:
-   Create 4 subject cards:
-
-- Physics
-- Chemistry
-- Mathematics
-- Biology
-
-Each card should include:
-
-- Subject name
-- Short description
-- "Practice Now" button
-
-4. Features Section:
-   Add 3 features:
-
-- Previous Year Questions
-- Practice Quiz
-- Instant Score
-
-5. Navigation Bar:
-   Home | Subjects | Practice | About
-
-Sticky navbar with smooth scrolling.
-
-6. Design:
-
-- Clean modern UI
-- Blue primary color (#2563EB)
-- Light background (#F8FAFC)
-- Dark text (#0F172A)
-- Rounded cards and soft shadows
-
-7. Footer:
-   Include copyright and quick links.
-
-8. JavaScript functionality:
-
-- Smooth scroll
-- Button click animations
-- Simple quiz popup demo
-
-9. Make the website fully mobile responsive.
-
-10. Use only HTML, CSS, and JavaScript (no frameworks).
-
-Output the code in three sections labeled:
-index.html
-style.css
-script.js
+    <script src="script.js"></script>
+</body>
+</html>
